@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "harmoni",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "lerna": "^8.1.8"
+  }
+}

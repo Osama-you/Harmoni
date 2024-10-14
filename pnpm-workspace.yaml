@@ -1,0 +1,3 @@
+packages:
+  - "apps/*" # This is where your frontend and backend will live
+  - "libs/*" # Shared libraries like utilities or types
