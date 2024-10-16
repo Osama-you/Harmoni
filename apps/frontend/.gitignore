@@ -29,3 +29,6 @@ npm-debug.log.*
 
 # temp
 yarn.lock
+
+
+v8-compile-cache-0
