@@ -1,10 +1,5 @@
-import {
-  app,
-  Menu,
-  shell,
-  BrowserWindow,
-  MenuItemConstructorOptions,
-} from 'electron';
+import type { BrowserWindow, MenuItemConstructorOptions } from 'electron';
+import { app, Menu, shell } from 'electron';
 
 interface DarwinMenuItemConstructorOptions extends MenuItemConstructorOptions {
   selector?: string;
