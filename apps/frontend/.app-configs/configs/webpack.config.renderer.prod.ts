@@ -40,25 +40,31 @@ const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.s?(a|c)ss$/,
+        test: /\.module\.s?(c|a)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: true, // Enables CSS Modules
               sourceMap: true,
               importLoaders: 1,
             },
           },
-          'sass-loader',
+          'sass-loader', // Allows SASS files
         ],
-        include: /\.module\.s?(c|a)ss$/,
+        include: /\.module\.s?(c|a)ss$/, // Only include CSS/SASS modules
       },
       {
         test: /\.s?(a|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-        exclude: /\.module\.s?(c|a)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+
+        ],
+        exclude: /\.module\.s?(c|a)ss$/, // Exclude CSS/SASS modules
       },
       // Fonts
       {

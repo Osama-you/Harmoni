@@ -27,8 +27,4 @@ npm-debug.log.*
 *.sass.d.ts
 *.scss.d.ts
 
-# temp
-yarn.lock
-
-
 v8-compile-cache-0

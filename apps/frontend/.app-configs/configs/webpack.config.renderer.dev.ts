@@ -64,8 +64,9 @@ const configuration: webpack.Configuration = {
 
   module: {
     rules: [
+      // Handling CSS Modules for SCSS
       {
-        test: /\.s?(c|a)ss$/,
+        test: /\.module\.s?(c|a)ss$/,
         use: [
           'style-loader',
           {
@@ -77,13 +78,28 @@ const configuration: webpack.Configuration = {
             },
           },
           'sass-loader',
+          'postcss-loader', // Use PostCSS loader only if necessary (Tailwind)
         ],
-        include: /\.module\.s?(c|a)ss$/,
       },
+      // Handling regular SCSS (not modules)
       {
-        test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader', // Only process SCSS with sass-loader
+
+        ],
         exclude: /\.module\.s?(c|a)ss$/,
+      },
+      // Handling regular CSS (no SASS loader here)
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+
+        ],
       },
       // Fonts
       {

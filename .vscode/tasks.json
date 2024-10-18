@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell", // Using shell to directly execute the PNPM command
+      "command": "pnpm",
+      "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}/apps/frontend" // Set working directory for PNPM
+      },
+      "problemMatcher": [],
+      "label": "pnpm: start - apps/frontend",
+      "detail": "ts-node ./.app-configs/scripts/check-port-in-use.js && pnpm run prestart && pnpm run start:renderer"
+    }
+  ]
+}

@@ -29,7 +29,8 @@
   },
   "prettier.ignorePath": ".gitignore",
   "[postcss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   }, // Don't run prettier for files listed in .gitignore
 
   "eslint.validate": [
