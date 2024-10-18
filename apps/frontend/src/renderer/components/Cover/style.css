@@ -1,0 +1,76 @@
+.section.cover {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  transform: translateY(-15vh);
+  opacity: 0;
+  transition:
+    transform 1.5s cubic-bezier(0.33, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1) 0.25s;
+  pointer-events: none;
+  display: none;
+}
+
+.section.cover > .content {
+  grid-column: 1 / -1;
+  display: flex;
+}
+
+.section.cover > div {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-bottom: 40px;
+  animation: welcome 1.5s ease-in-out;
+}
+
+@keyframes welcome {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body.is--loading {
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+body.is--loading .header,
+body.is--loading .app-nav,
+body.is--loading .app-aside .options .option {
+  transition: opacity 1s cubic-bezier(0.33, 0, 0.2, 1) 0.75s;
+}
+
+body.is--loading .app-main {
+  position: relative;
+  transform: none;
+  transition: transform 1.5s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+body.is--loading .section.cover {
+  display: grid;
+}
+
+body.is--loading .section.work .hero-image figure {
+  visibility: hidden;
+}
+
+body.cover--is--visible .app-main {
+  transform: translateY(115vh);
+}
+
+body.cover--is--visible .section.cover {
+  transform: translateY(-115vh);
+  opacity: 1;
+}
+
+body.cover--is--visible .header,
+body.cover--is--visible .app-nav,
+body.cover--is--visible .app-aside .options .option {
+  opacity: 0;
+}

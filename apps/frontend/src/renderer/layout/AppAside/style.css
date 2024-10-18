@@ -1,0 +1,40 @@
+.app-aside {
+  position: fixed;
+  bottom: calc(var(--grid--app-margin) - 12px);
+  left: calc(var(--grid--app-margin) - 12px);
+  z-index: 100;
+}
+
+.app-aside .options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 2px gap */
+}
+
+.app-aside .option {
+  width: 3rem; /* 12px */
+  height: 3rem; /* 12px */
+  border-radius: 24px;
+  background-color: var(--color--foreground--5);
+  backdrop-filter: blur(8px);
+}
+
+.app-aside .option:hover {
+  background-color: var(--color--foreground--15);
+  cursor: pointer;
+}
+
+.app-aside .option:active {
+  background-color: var(--color--foreground--20);
+}
+
+.app-aside .option svg path {
+  fill: var(--color--foreground--100);
+}
+
+@media (max-width: 1020px) {
+  .app-aside {
+    left: var(--grid--app-margin);
+    bottom: var(--grid--app-margin);
+  }
+}

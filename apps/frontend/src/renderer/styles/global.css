@@ -1,0 +1,45 @@
+@import url('./theme/index.css');
+
+body {
+  overflow: var(--body-overflow, var(--overflow-auto));
+}
+
+.section {
+  padding: 0 var(--grid--app-margin);
+  display: grid;
+  grid-template-columns: var(--grid--app-columns);
+  gap: var(--grid--app-gutter);
+}
+
+.section > .content {
+  grid-column: 5 / -1;
+}
+
+.section h1 {
+  margin-left: var(--font--margin-left);
+  font-size: var(--font--size-huge);
+  line-height: 0.975;
+  letter-spacing: -0.02em;
+}
+
+.section h2 {
+  margin-left: var(--font--margin-left);
+  font-size: var(--font--size-large);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+}
+
+.section h3 {
+  font-size: var(--font--size-regular);
+  line-height: var(--font--size-regular-line-height);
+  color: var(--color--foreground--50);
+}
+
+.app-main a {
+  border-bottom: 1px solid var(--color--foreground--25);
+}
+
+.app-main a:hover {
+  border-bottom-color: var(--color--foreground--100);
+  cursor: pointer;
+}

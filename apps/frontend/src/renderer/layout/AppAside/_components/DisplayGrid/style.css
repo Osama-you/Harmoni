@@ -1,0 +1,30 @@
+.app-aside .option.grid {
+  display: flex;
+  justify-content: center;
+}
+
+.app-aside .option.grid .content {
+  display: flex;
+  align-items: center;
+}
+
+/* 6 columns */
+@media all and (max-width: 1020px) {
+  .app-grid-overlay .column:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+/* 3 columns */
+@media all and (max-width: 760px) {
+  .app-grid-overlay .column:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+/* 2 columns */
+@media all and (max-width: 500px) {
+  .app-grid-overlay .column:nth-child(n + 3) {
+    display: none;
+  }
+}

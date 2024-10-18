@@ -1,0 +1,119 @@
+.app-aside .option.theme {
+  position: relative;
+  transition-property: height;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-delay: 0.62s;
+}
+
+.app-aside .option.theme .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem; /* 12px */
+  height: 3rem; /* 12px */
+  position: absolute;
+  bottom: 0;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.app-aside .option.theme .slider-container {
+  width: 3rem; /* 12px */
+  height: 3rem; /* 12px */
+  border-radius: 24px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  position: absolute;
+  bottom: -48px;
+  pointer-events: none;
+  transition-property: width;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-delay: 0.62s;
+}
+
+.app-aside .option.theme .dots {
+  position: absolute;
+  width: 100%;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-aside .option.theme .dot {
+  width: 0.25rem; /* 1px */
+  height: 0.25rem; /* 1px */
+  border-radius: 0.125rem; /* small rounded corners */
+  transform: translateX(-1rem); /* -4px */
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.app-aside .option.theme .slider {
+  appearance: none;
+  width: 100%;
+  height: 3rem; /* 12px */
+  outline: none;
+  position: absolute;
+  background-color: var(--color--background--0);
+  cursor: pointer;
+}
+
+.app-aside .option.theme .slider::-webkit-slider-thumb {
+  appearance: none;
+  box-shadow: none;
+  background-color: transparent;
+  width: 3rem; /* 12px */
+  height: 3rem; /* 12px */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.app-aside .option.theme .slider::-moz-range-thumb {
+  background-color: transparent;
+  box-shadow: none;
+  width: 3rem; /* 12px */
+  height: 3rem; /* 12px */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.app-aside .option.theme.theme-slider--is--visible {
+  height: 368px;
+  transition-property: height;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-delay: 0s !important;
+}
+
+/* Use a class to control body overflow when the slider is visible */
+body:has(.theme-slider--is--visible.touchevents) {
+  overflow: hidden;
+}
+
+/* Reset overflow when the slider is not visible */
+body:not(:has(.theme-slider--is--visible)) {
+  overflow: auto;
+}
+
+.app-aside .option.theme.theme-slider--is--visible .icon-container {
+  transition: bottom 0.3s ease-out;
+  transition-delay: 0s !important;
+}
+
+.app-aside .option.theme.theme-slider--is--visible .slider-container {
+  width: 368px;
+  transition: width 0.3s ease;
+  pointer-events: auto;
+  transition-delay: 0s !important;
+}
+
+.app-aside .option.theme.theme-slider--is--visible .dot {
+  transform: none;
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}

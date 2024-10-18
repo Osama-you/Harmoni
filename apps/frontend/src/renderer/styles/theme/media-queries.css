@@ -1,0 +1,50 @@
+/* Global Media Queries
+----------------------------------------------------------------------------- */
+
+/* 12 columns */
+@media all and (max-width: 1280px) {
+  body {
+    --font--size-huge: clamp(36px, 6.35vw, 6.35vw);
+    --font--size-large: clamp(26px, 2.24vw, 2.24vw);
+  }
+  .section > .content {
+    grid-column: 3 / -1;
+  }
+}
+
+/* 6 columns */
+@media (max-width: 1020px) {
+  body {
+    --grid--app-margin: 20px;
+    --grid--app-columns: var(--grid--app-columns-6);
+    --font--size-huge: clamp(36px, 7.77vw, 7.77vw);
+    --font--size-large: clamp(22px, 2.74vw, 2.74vw);
+    --font--size-medium: 22px;
+  }
+
+}
+
+/* 3 columns */
+@media (max-width: 760px) {
+  body {
+    --grid--app-columns: var(--grid--app-columns-3);
+  }
+}
+
+/* 2 columns */
+@media (max-width: 500px) {
+  body {
+    --grid--app-margin: 16px;
+    --grid--app-columns: var(--grid--app-columns-2);
+    --grid--app-gutter: 16px;
+    --font--size-huge: clamp(32px, 7.5vw, 7.5vw);
+    --font--size-large: clamp(22px, 2.64vw, 2.64vw);
+  }
+}
+
+/* Short height */
+@media (max-height: 760px) {
+  body {
+    --grid--app-xheight: 120px;
+  }
+}
